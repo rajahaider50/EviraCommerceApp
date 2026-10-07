@@ -1,6 +1,3 @@
-// Generated-style Firebase configuration placeholder.
-// Replace these values with your own Firebase project configuration for
-// Firebase-backed features. No private keys are stored in this file.
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 
@@ -19,30 +16,21 @@ class DefaultFirebaseOptions {
       case TargetPlatform.linux:
         return linux;
       case TargetPlatform.fuchsia:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions are not supported for Fuchsia.',
-        );
+        throw UnsupportedError('DefaultFirebaseOptions are not supported for Fuchsia.');
     }
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'replace-with-your-firebase-api-key',
-    appId: '1:000000000000:android:replace-with-your-app-id',
-    messagingSenderId: '000000000000',
-    projectId: 'replace-with-your-firebase-project-id',
-    storageBucket: 'replace-with-your-firebase-storage-bucket',
+    apiKey: 'AIzaSyBw7l7JKNG2cR4EbVly0RXFVQAplR0VMmc',
+    appId: '1:245372490842:android:0dece9b9be8e8096713463',
+    messagingSenderId: '245372490842',
+    projectId: 'fir-2d661',
+    storageBucket: 'fir-2d661.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = android;
   static const FirebaseOptions macos = android;
   static const FirebaseOptions windows = android;
   static const FirebaseOptions linux = android;
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'replace-with-your-firebase-api-key',
-    appId: '1:000000000000:web:replace-with-your-app-id',
-    messagingSenderId: '000000000000',
-    projectId: 'replace-with-your-firebase-project-id',
-    authDomain: 'replace-with-your-firebase-project-id.firebaseapp.com',
-    storageBucket: 'replace-with-your-firebase-storage-bucket',
-  );
+  static const FirebaseOptions web = android;
 }

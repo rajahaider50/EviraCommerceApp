@@ -1,0 +1,19 @@
+{
+  "project_info": {
+    "project_number": "245372490842",
+    "project_id": "fir-2d661",
+    "storage_bucket": "fir-2d661.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245372490842:android:0dece9b9be8e8096713463",
+        "android_client_info": {"package_name": "com.blackcode.evira"}
+      },
+      "oauth_client": [],
+      "api_key": [{"current_key": "AIzaSyBw7l7JKNG2cR4EbVly0RXFVQAplR0VMmc"}],
+      "services": {"appinvite_service": {"other_platform_oauth_client": []}}
+    }
+  ],
+  "configuration_version": "1"
+}
