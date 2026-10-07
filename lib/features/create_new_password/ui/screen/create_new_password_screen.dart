@@ -2,7 +2,6 @@ import 'package:evira_e_commerce/core/constants/app_styles.dart';
 import 'package:evira_e_commerce/core/gen/assets.gen.dart';
 import 'package:evira_e_commerce/core/lang_generated/l10n.dart';
 import 'package:evira_e_commerce/core/theme/app_theme.dart';
-import 'package:evira_e_commerce/features/create_new_password/ui/dialogs/reset_password_successful_dialog.dart';
 import 'package:evira_e_commerce/shared/cubits/text_field_cubit.dart';
 import 'package:evira_e_commerce/shared/cubits/text_field_state.dart';
 import 'package:evira_e_commerce/shared/mixins/stateful_screen_mixin.dart';
@@ -15,6 +14,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_flutter_toolkit/core/extensions/context_extensions.dart';
 import 'package:my_flutter_toolkit/core/utils/text_field_utils/validators.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class CreateNewPasswordScreen extends StatefulWidget {
   const CreateNewPasswordScreen({super.key});
@@ -29,6 +29,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen>
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
   late GlobalKey<FormState> formKey;
+  bool isSaving = false;
 
   @override
   void initState() {
@@ -130,7 +131,32 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen>
                   onPressed: isActive
                       ? () async {
                           if (formKey.currentState?.validate() ?? false) {
-                            await ResetPasswordSuccessfulDialog.show(context);
+                            setState(() => isSaving = true);
+                            try {
+                              await Supabase.instance.client.auth.updateUser(
+                                UserAttributes(
+                                  password: passwordController.text,
+                                ),
+                              );
+                              if (!mounted) return;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    'Password updated successfully.',
+                                  ),
+                                ),
+                              );
+                              Navigator.of(
+                                context,
+                              ).popUntil((route) => route.isFirst);
+                            } on AuthException catch (error) {
+                              if (!mounted) return;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(error.message)),
+                              );
+                            } finally {
+                              if (mounted) setState(() => isSaving = false);
+                            }
                           }
                         }
                       : null,
