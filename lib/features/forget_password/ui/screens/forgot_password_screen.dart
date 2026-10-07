@@ -10,6 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_flutter_toolkit/core/extensions/context_extensions.dart';
 import 'package:my_flutter_toolkit/core/utils/text_field_utils/validators.dart';
+import 'package:evira_e_commerce/core/routes/app_paths.dart';
+import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -35,17 +37,22 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen>
 
   Future<void> sendResetEmail() async {
     if (!(formKey.currentState?.validate() ?? false)) return;
+    final email = emailController.text.trim();
     setState(() => loading = true);
     try {
       await Supabase.instance.client.auth.resetPasswordForEmail(
-        emailController.text.trim(),
+        email,
         redirectTo: 'blackcode://auth-callback',
       );
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Password reset link sent. Check your email.'),
+          content: Text('Password reset instructions sent. Check your email.'),
         ),
+      );
+      context.push(
+        AppPaths.forgotPasswordVerify,
+        extra: email,
       );
     } on AuthException catch (error) {
       if (!mounted) return;

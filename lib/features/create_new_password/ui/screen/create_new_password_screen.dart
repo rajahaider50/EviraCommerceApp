@@ -14,6 +14,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_flutter_toolkit/core/extensions/context_extensions.dart';
 import 'package:my_flutter_toolkit/core/utils/text_field_utils/validators.dart';
+import 'package:evira_e_commerce/core/routes/app_paths.dart';
+import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class CreateNewPasswordScreen extends StatefulWidget {
@@ -146,9 +148,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen>
                                   ),
                                 ),
                               );
-                              Navigator.of(
-                                context,
-                              ).popUntil((route) => route.isFirst);
+                              context.go(AppPaths.login);
                             } on AuthException catch (error) {
                               if (!mounted) return;
                               ScaffoldMessenger.of(context).showSnackBar(

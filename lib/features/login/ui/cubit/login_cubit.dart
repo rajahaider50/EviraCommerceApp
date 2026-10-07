@@ -19,19 +19,21 @@ class LoginCubit extends Cubit<LoginState> {
       await loginUsecase(loginEntity);
       emit(LoginSuccess());
     } on AuthException catch (e) {
-      emit(LoginError(commonErrors(e.code ?? e.message)));
+      emit(LoginError(commonErrors(e.code ?? '', e.message)));
     } catch (e) {
       return emit(LoginError(e.toString()));
     }
   }
 
-  String commonErrors(String code) {
+  String commonErrors(String code, String message) {
     switch (code) {
       case 'invalid_credentials':
+      case 'invalid_grant':
         return EviraLang.current.invalid_credentials;
+      case 'email_not_confirmed':
+        return 'Please confirm your email address.';
       default:
-        print(code);
-        return EviraLang.current.unknownError;
+        return message.isNotEmpty ? message : EviraLang.current.unknownError;
     }
   }
 }

@@ -23,13 +23,13 @@ class SignupCubit extends Cubit<SignupState> {
         emit(SignupError(message: EviraLang.current.unknownError));
       }
     } on AuthException catch (e) {
-      emit(SignupError(message: commonErrors(e.code ?? e.message)));
+      emit(SignupError(message: commonErrors(e.code ?? '', e.message)));
     } catch (e) {
       return emit(SignupError(message: e.toString()));
     }
   }
 
-  String commonErrors(String code) {
+  String commonErrors(String code, String message) {
     switch (code) {
       case 'weak-password':
         return EviraLang.current.passwordTooWeak;
@@ -40,13 +40,8 @@ class SignupCubit extends Cubit<SignupState> {
         return EviraLang.current.invalidEmail;
       case 'over_email_send_rate_limit':
         return EviraLang.current.tooManyRequests;
-
-      // case 'operation-not-allowed':
-      //   return EviraLang.current.operationNotAllowed;
-      // case 'network-request-failed':
-      //   return EviraLang.current.networkError;
       default:
-        return EviraLang.current.unknownError;
+        return message.isNotEmpty ? message : EviraLang.current.unknownError;
     }
   }
 }

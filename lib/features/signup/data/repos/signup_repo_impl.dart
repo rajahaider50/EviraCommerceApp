@@ -14,18 +14,8 @@ class SignupRepoImpl implements SignupRepo {
       password: signupEntity.password,
     );
 
-    // ✅ حالة نجاح كامل (تم التسجيل + session موجودة)
-    if (response.user != null && response.session != null) {
-      // if (remember) {
-      //   await getIt<SharedPreferencesService>().setBool('remember', true);
-      // }
+    if (response.user != null) {
       return true;
-    }
-
-    // ⚠️ حالة: الإيميل مستخدم أو محتاج تفعيل
-    if (response.user != null && response.session == null) {
-      // هنا ممكن تميّز بين إيميل موجود بالفعل أو مجرد محتاج confirmation
-      return false;
     }
     return false;
   }

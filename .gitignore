@@ -53,4 +53,7 @@ google-services.json
 # Generated Firebase options placeholder is safe to commit; replace values for production.
 !lib/firebase_options.dart
 
-.env
+# Supabase
+supabase/.temp/
+supabase/
+!.env

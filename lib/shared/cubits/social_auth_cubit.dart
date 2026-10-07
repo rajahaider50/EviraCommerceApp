@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:app_links/app_links.dart';
 import 'package:equatable/equatable.dart';
 import 'package:evira_e_commerce/core/services/social_auth_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,33 +11,6 @@ class SocialAuthCubit extends Cubit<SocialAuthState> {
   final SocialAuthService socialAuthService;
   SocialAuthCubit(this.socialAuthService) : super(SocialAuthInitial());
 
-  Future<void> signInWithFacebook() async {
-    try {
-      StreamSubscription sub = Stream.empty().listen((event) {});
-      await socialAuthService.signInWithFacebook();
-
-      final appLinks = AppLinks();
-      sub = appLinks.uriLinkStream.listen((uri) {
-        if (uri.host == 'facebook-login') {
-          final error = uri.queryParameters['error'];
-          final code = uri.queryParameters['code'];
-          if (error != null) {
-            if (error == 'access_denied') {
-              emit(FacebookAuthCanceled());
-            } else {
-              emit(FacebookAuthFailure(message: error));
-            }
-          } else if (code != null) {
-            emit(FacebookAuthSuccess());
-          }
-          sub.cancel();
-        }
-      });
-    } catch (e) {
-      emit(FacebookAuthFailure(message: e.toString()));
-    }
-  }
-
   Future<void> signInWithGoogle() async {
     emit(GoogleAuthLoading());
     try {
@@ -53,12 +23,17 @@ class SocialAuthCubit extends Cubit<SocialAuthState> {
         emit(GoogleAuthFailure(message: e.toString()));
       }
     } catch (e) {
-      emit(GoogleAuthFailure(message: e.toString()));
+      final msg = e.toString();
+      if (msg.contains('canceled') || msg.contains('cancelled')) {
+        emit(GoogleAuthCanceled());
+      } else {
+        emit(GoogleAuthFailure(message: msg));
+      }
     }
   }
 
   Future<void> signOut() async {
-    emit((SignOutLoading()));
+    emit(SignOutLoading());
     try {
       await socialAuthService.signOut();
       emit(SignOutSuccess());

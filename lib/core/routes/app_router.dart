@@ -392,7 +392,8 @@ class AppRouter {
         GoRoute(
           path: AppPaths.forgotPasswordVerify,
           builder: (context, state) {
-            return const ForgotPasswordOtpScreen();
+            final email = state.extra as String? ?? '';
+            return ForgotPasswordOtpScreen(email: email);
           },
         ),
 

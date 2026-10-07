@@ -72,8 +72,8 @@ class _SignupScreenState extends State<SignupScreen>
             SizedBox(height: 25.h),
             SignupButtonPart(
               formKey: _formKey,
-              email: _emailController.text.trim(),
-              password: _passwordController.text.trim(),
+              emailController: _emailController,
+              passwordController: _passwordController,
               remember: remember,
             ),
             SizedBox(height: 50.h),

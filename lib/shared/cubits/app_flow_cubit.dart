@@ -17,8 +17,12 @@ class AppFlowCubit extends Cubit<AppFlowState> {
 
   AppFlowCubit() : super(AppFlowInitial()) {
     checkUserState();
-    _authSub ??= _supabase.auth.onAuthStateChange.listen((_) {
-      checkUserState();
+    _authSub ??= _supabase.auth.onAuthStateChange.listen((data) {
+      if (data.event == AuthChangeEvent.passwordRecovery) {
+        emit(AppFlowPathState(AppPaths.createNewPassword));
+      } else {
+        checkUserState();
+      }
     });
   }
 

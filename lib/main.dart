@@ -33,34 +33,47 @@ Future<void> main() async {
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // initialize dotenv
-  await dotenv.load(fileName: ".env");
+  // initialize dotenv safely
+  try {
+    await dotenv.load(fileName: ".env");
+  } catch (e) {
+    debugPrint("Failed to load .env: $e");
+  }
 
-  // Initialize optional cloud services when real project credentials exist.
-  // The public source tree intentionally ships with placeholders so it can be
-  // built safely; add your own values to .env and firebase_options.dart.
+  // Initialize Firebase
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-  } catch (_) {
-    // Firebase is optional for the local/demo build.
+  } catch (e) {
+    debugPrint("Firebase init: $e");
   }
-  final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
-  final supabaseKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
-  final hasSupabaseConfig =
-      supabaseUrl.startsWith('https://') &&
-      supabaseKey.isNotEmpty &&
-      !supabaseKey.startsWith('placeholder');
+
+  // Real Supabase credentials for Evira Commerce
+  const defaultSupabaseUrl = 'https://nctjniranlqmfjbchrle.supabase.co';
+  const defaultSupabaseKey =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5jdGpuaXJhbmxxbWZqYmNocmxlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzNTAzMDgsImV4cCI6MjEwNjkyNjMwOH0.3w6BcbXZ8CJg69cmELeivP0a7x1l22i2yEZm7LELoYA';
+
+  final envUrl = dotenv.env['SUPABASE_URL'] ?? '';
+  final envKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
+
+  final supabaseUrl =
+      (envUrl.startsWith('https://') && !envUrl.contains('your-project') && !envUrl.contains('placeholder'))
+          ? envUrl
+          : defaultSupabaseUrl;
+  final supabaseKey =
+      (envKey.isNotEmpty && !envKey.contains('your-supabase') && !envKey.contains('placeholder'))
+          ? envKey
+          : defaultSupabaseKey;
+
   try {
     await Supabase.initialize(
-      // A local fallback keeps the UI usable when backend credentials have
-      // not been configured yet. Replace .env values for real data/auth.
-      url: hasSupabaseConfig ? supabaseUrl : 'https://placeholder.supabase.co',
-      publishableKey: hasSupabaseConfig ? supabaseKey : 'placeholder-anon-key',
-    ).timeout(const Duration(seconds: 3));
-  } catch (_) {
-    // The app can still open in offline/demo mode.
+      url: supabaseUrl,
+      publishableKey: supabaseKey,
+      authCallbackUrlHostname: 'auth-callback',
+    ).timeout(const Duration(seconds: 10));
+  } catch (e) {
+    debugPrint("Supabase init: $e");
   }
 
   // initialize dependencies

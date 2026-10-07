@@ -9,6 +9,7 @@ class PinTextField extends StatelessWidget {
   final Function(String value)? onCompleted;
   final Function(String value) onChanged;
   final bool? isObscureText;
+  final int length;
 
   const PinTextField({
     super.key,
@@ -16,15 +17,20 @@ class PinTextField extends StatelessWidget {
     this.onCompleted,
     required this.onChanged,
     this.isObscureText,
+    this.length = 4,
   });
 
   @override
   Widget build(BuildContext context) {
+    final double boxWidth = length > 4 ? 48.w : 80.w;
+    final double boxHeight = length > 4 ? 56.h : 70.h;
+    final double fontSize = length > 4 ? 18.sp : 20.sp;
+
     final defaultPinTheme = PinTheme(
-      width: 80.w,
-      height: 70.h,
+      width: boxWidth,
+      height: boxHeight,
       textStyle: GoogleFonts.urbanist(
-        fontSize: 20.sp,
+        fontSize: fontSize,
         color: context.textColor,
         fontWeight: FontWeight.w600,
       ),
@@ -35,14 +41,15 @@ class PinTextField extends StatelessWidget {
     );
 
     final focusedPinTheme = PinTheme(
-      width: 80.w,
-      height: 70.h,
+      width: boxWidth,
+      height: boxHeight,
       textStyle: GoogleFonts.urbanist(
-        fontSize: 20.sp,
+        fontSize: fontSize,
         color: context.textColor,
         fontWeight: FontWeight.w600,
       ),
       decoration: BoxDecoration(
+        color: context.textFieldColor,
         border: Border.all(color: context.textFieldBorderColor),
         borderRadius: BorderRadius.circular(12.r),
       ),
@@ -52,7 +59,7 @@ class PinTextField extends StatelessWidget {
       controller: pinController,
       defaultPinTheme: defaultPinTheme,
       focusedPinTheme: focusedPinTheme,
-      length: 4,
+      length: length,
       obscureText: isObscureText ?? false,
       obscuringCharacter: '●',
       onCompleted: onCompleted,

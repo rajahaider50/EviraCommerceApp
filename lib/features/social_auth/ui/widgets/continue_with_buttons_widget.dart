@@ -20,31 +20,6 @@ class ContinueWithButtonsWidget extends StatelessWidget {
       children: [
         BlocConsumer<SocialAuthCubit, SocialAuthState>(
           listener: (context, state) {
-            if (state is FacebookAuthSuccess) {
-              context.read<AppFlowCubit>().checkUserState();
-            } else if (state is FacebookAuthFailure) {
-              getIt<ToastService>().showErrorToast(
-                message: state.message,
-                context: context,
-              );
-            }
-          },
-          builder: (context, state) {
-            bool isLoading = state is FacebookAuthLoading;
-            return CustomSignButton(
-              isLoading: isLoading,
-              title: l10n.continueWithFacebook,
-              icon: Assets.icons.facebook.svg(width: 30.h, height: 30.h),
-
-              onPressed: () async {
-                await context.read<SocialAuthCubit>().signInWithFacebook();
-              },
-            );
-          },
-        ),
-        15.verticalSpace,
-        BlocConsumer<SocialAuthCubit, SocialAuthState>(
-          listener: (context, state) {
             if (state is GoogleAuthSuccess) {
               context.read<AppFlowCubit>().checkUserState();
             } else if (state is GoogleAuthFailure) {
@@ -63,24 +38,6 @@ class ContinueWithButtonsWidget extends StatelessWidget {
               onPressed: () async {
                 await context.read<SocialAuthCubit>().signInWithGoogle();
               },
-            );
-          },
-        ),
-        15.verticalSpace,
-        CustomSignButton(
-          title: l10n.continueWithApple,
-          icon: Assets.icons.apple.svg(
-            width: 30.h,
-            height: 30.h,
-            colorFilter: ColorFilter.mode(
-              context.isDark ? Colors.white : Colors.black,
-              BlendMode.srcIn,
-            ),
-          ),
-          onPressed: () {
-            getIt<ToastService>().showWarningToast(
-              message: l10n.comingSoon,
-              context: context,
             );
           },
         ),

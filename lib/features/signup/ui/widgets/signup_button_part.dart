@@ -15,14 +15,14 @@ class SignupButtonPart extends StatelessWidget {
   const SignupButtonPart({
     super.key,
     required GlobalKey<FormState> formKey,
-    required this.email,
-    required this.password,
+    required this.emailController,
+    required this.passwordController,
     required this.remember,
   }) : _formKey = formKey;
 
   final GlobalKey<FormState> _formKey;
-  final String email;
-  final String password;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
   final bool remember;
 
   @override
@@ -31,6 +31,10 @@ class SignupButtonPart extends StatelessWidget {
       bloc: context.read<SignupCubit>(),
       listener: (context, state) {
         if (state is SignupSuccess) {
+          getIt<ToastService>().showSuccessToast(
+            context: context,
+            message: 'Account created successfully!',
+          );
           context.read<AppFlowCubit>().checkUserState();
         } else if (state is SignupError) {
           getIt<ToastService>().showErrorToast(
@@ -56,8 +60,8 @@ class SignupButtonPart extends StatelessWidget {
                       if (_formKey.currentState?.validate() ?? false) {
                         await context.read<SignupCubit>().signup(
                           signupEntity: SignupEntity(
-                            email: email,
-                            password: password,
+                            email: emailController.text.trim(),
+                            password: passwordController.text.trim(),
                           ),
                         );
                       }

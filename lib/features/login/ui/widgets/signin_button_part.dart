@@ -26,7 +26,7 @@ class SignInButtonPart extends StatelessWidget {
             message: state.message,
           );
         } else if (state is LoginSuccess) {
-          context.push(AppPaths.home);
+          context.read<AppFlowCubit>().checkUserState();
         }
       },
       builder: (context, state) {
