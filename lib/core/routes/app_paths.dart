@@ -1,0 +1,34 @@
+class AppPaths {
+  static final String onboarding = '/onboarding';
+  static final String auth = '/socialAuth';
+  static final String home = '/home';
+  static final String signUp = '/signUp';
+  static final String login = '/login';
+  static final String fillProfile = '/fillProfile';
+  static final String createPin = '/createPin';
+  static final String setFingerprint = '/setFingerprint';
+  static final String forgotPassword = '/forgotPassword';
+  static final String forgotPasswordVerify = '/forgotPasswordVerify';
+  static final String createNewPassword = '/createNewPassword';
+  static final String noInternet = '/noInternet';
+  static final String error = '/error';
+  static final String notification = '/notification';
+  static final String wishlist = '/wishlist';
+  static final String specialOffer = '/specialOffer';
+  static final String mostPopular = '/mostPopular';
+  static final String search = '/search';
+  static final String categoryView = '/categoryView';
+  static final String productDetails = '/productDetails';
+  static final String profile = '/profile';
+  static final String language = '/language';
+  static final String inviteFriends = '/inviteFriends';
+  static final String privacyPolicy = '/privacyPolicy';
+  static final String helpCenter = '/helpCenter';
+  static final String customerService = '/customerService';
+  static final String editProfile = '/editProfile';
+  static final String address = '/address';
+  static final String addNewAddress = '/addNewAddress';
+  static final String notificationSettings = '/notificationSettings';
+  static final String addNewCard = '/addNewCard';
+  static final String payment = '/payment';
+}

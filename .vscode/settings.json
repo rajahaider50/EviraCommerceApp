@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.flutter-plugins": true,
+    "**/.flutter-plugins-dependencies": true,
+    "**/build": true,
+    "**/.pub-cache": true
+  },
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/.flutter-plugins": true,
+    "**/.flutter-plugins-dependencies": true,
+    "**/build": true,
+    "**/.pub-cache": true,
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  },
+  "files.watcherExclude": {
+    "**/.dart_tool/**": true,
+    "**/build/**": true,
+    "**/.pub-cache/**": true
+  },
+  "dart.onlyAnalyzeProjectsWithOpenFiles": true
+}

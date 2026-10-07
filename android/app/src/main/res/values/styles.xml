@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LaunchTheme" parent="Theme.AppCompat.DayNight">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:statusBarColor">#191a1f</item>
+        <item name="android:navigationBarColor">#191a1f</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    <item name="alertDialogTheme">@style/MyAlertDialogTheme</item>
+    </style>
+
+    <style name="MyAlertDialogTheme"
+        parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/MyDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MyDialogButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MyDialogButton</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    
+    <style name="MyDialogButton"
+        parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

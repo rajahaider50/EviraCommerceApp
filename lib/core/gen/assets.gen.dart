@@ -1,0 +1,621 @@
+// dart format width=80
+
+/// GENERATED CODE - DO NOT MODIFY BY HAND
+/// *****************************************************
+///  FlutterGen
+/// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
+
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:lottie/lottie.dart' as _lottie;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
+
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/amazon_logo.svg
+  SvgGenImage get amazonLogo =>
+      const SvgGenImage('assets/icons/amazon_logo.svg');
+
+  /// File path: assets/icons/apple.svg
+  SvgGenImage get apple => const SvgGenImage('assets/icons/apple.svg');
+
+  /// File path: assets/icons/card_chip.svg
+  SvgGenImage get cardChip => const SvgGenImage('assets/icons/card_chip.svg');
+
+  /// File path: assets/icons/cart.png
+  AssetGenImage get cart => const AssetGenImage('assets/icons/cart.png');
+
+  /// File path: assets/icons/cart_active.png
+  AssetGenImage get cartActive =>
+      const AssetGenImage('assets/icons/cart_active.png');
+
+  /// File path: assets/icons/close.svg
+  SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
+
+  /// File path: assets/icons/contactless_logo.svg
+  SvgGenImage get contactlessLogo =>
+      const SvgGenImage('assets/icons/contactless_logo.svg');
+
+  /// File path: assets/icons/customer_service.svg
+  SvgGenImage get customerService =>
+      const SvgGenImage('assets/icons/customer_service.svg');
+
+  /// File path: assets/icons/darkmode_outline.svg
+  SvgGenImage get darkmodeOutline =>
+      const SvgGenImage('assets/icons/darkmode_outline.svg');
+
+  /// File path: assets/icons/facebook.svg
+  SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
+
+  /// File path: assets/icons/facebook_2.svg
+  SvgGenImage get facebook2 => const SvgGenImage('assets/icons/facebook_2.svg');
+
+  /// File path: assets/icons/gallery.svg
+  SvgGenImage get gallery => const SvgGenImage('assets/icons/gallery.svg');
+
+  /// File path: assets/icons/google.svg
+  SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
+
+  /// File path: assets/icons/help_center_outline.svg
+  SvgGenImage get helpCenterOutline =>
+      const SvgGenImage('assets/icons/help_center_outline.svg');
+
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
+
+  /// File path: assets/icons/home_active.png
+  AssetGenImage get homeActive =>
+      const AssetGenImage('assets/icons/home_active.png');
+
+  /// File path: assets/icons/instagram.svg
+  SvgGenImage get instagram => const SvgGenImage('assets/icons/instagram.svg');
+
+  /// File path: assets/icons/invite_friends_outline.svg
+  SvgGenImage get inviteFriendsOutline =>
+      const SvgGenImage('assets/icons/invite_friends_outline.svg');
+
+  /// File path: assets/icons/language_outline.svg
+  SvgGenImage get languageOutline =>
+      const SvgGenImage('assets/icons/language_outline.svg');
+
+  /// File path: assets/icons/location_outline.svg
+  SvgGenImage get locationOutline =>
+      const SvgGenImage('assets/icons/location_outline.svg');
+
+  /// File path: assets/icons/location_pin.svg
+  SvgGenImage get locationPin =>
+      const SvgGenImage('assets/icons/location_pin.svg');
+
+  /// File path: assets/icons/logout_outline.svg
+  SvgGenImage get logoutOutline =>
+      const SvgGenImage('assets/icons/logout_outline.svg');
+
+  /// File path: assets/icons/notification_outline.svg
+  SvgGenImage get notificationOutline =>
+      const SvgGenImage('assets/icons/notification_outline.svg');
+
+  /// File path: assets/icons/orders.png
+  AssetGenImage get orders => const AssetGenImage('assets/icons/orders.png');
+
+  /// File path: assets/icons/orders_active.png
+  AssetGenImage get ordersActive =>
+      const AssetGenImage('assets/icons/orders_active.png');
+
+  /// File path: assets/icons/person.png
+  AssetGenImage get person => const AssetGenImage('assets/icons/person.png');
+
+  /// File path: assets/icons/person_active.png
+  AssetGenImage get personActive =>
+      const AssetGenImage('assets/icons/person_active.png');
+
+  /// File path: assets/icons/phone.svg
+  SvgGenImage get phone => const SvgGenImage('assets/icons/phone.svg');
+
+  /// File path: assets/icons/privacy_policy_outline.svg
+  SvgGenImage get privacyPolicyOutline =>
+      const SvgGenImage('assets/icons/privacy_policy_outline.svg');
+
+  /// File path: assets/icons/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
+
+  /// File path: assets/icons/round_menu.svg
+  SvgGenImage get roundMenu => const SvgGenImage('assets/icons/round_menu.svg');
+
+  /// File path: assets/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
+
+  /// File path: assets/icons/security_outline.svg
+  SvgGenImage get securityOutline =>
+      const SvgGenImage('assets/icons/security_outline.svg');
+
+  /// File path: assets/icons/sliders-simple.svg
+  SvgGenImage get slidersSimple =>
+      const SvgGenImage('assets/icons/sliders-simple.svg');
+
+  /// File path: assets/icons/triangle_shapes.png
+  AssetGenImage get triangleShapes =>
+      const AssetGenImage('assets/icons/triangle_shapes.png');
+
+  /// File path: assets/icons/twitter.svg
+  SvgGenImage get twitter => const SvgGenImage('assets/icons/twitter.svg');
+
+  /// File path: assets/icons/user_outline.svg
+  SvgGenImage get userOutline =>
+      const SvgGenImage('assets/icons/user_outline.svg');
+
+  /// File path: assets/icons/visa_logo.svg
+  SvgGenImage get visaLogo => const SvgGenImage('assets/icons/visa_logo.svg');
+
+  /// File path: assets/icons/wallet.png
+  AssetGenImage get wallet => const AssetGenImage('assets/icons/wallet.png');
+
+  /// File path: assets/icons/wallet_active.png
+  AssetGenImage get walletActive =>
+      const AssetGenImage('assets/icons/wallet_active.png');
+
+  /// File path: assets/icons/wallet_outline.svg
+  SvgGenImage get walletOutline =>
+      const SvgGenImage('assets/icons/wallet_outline.svg');
+
+  /// File path: assets/icons/website.svg
+  SvgGenImage get website => const SvgGenImage('assets/icons/website.svg');
+
+  /// File path: assets/icons/whatsapp.svg
+  SvgGenImage get whatsapp => const SvgGenImage('assets/icons/whatsapp.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+    amazonLogo,
+    apple,
+    cardChip,
+    cart,
+    cartActive,
+    close,
+    contactlessLogo,
+    customerService,
+    darkmodeOutline,
+    facebook,
+    facebook2,
+    gallery,
+    google,
+    helpCenterOutline,
+    home,
+    homeActive,
+    instagram,
+    inviteFriendsOutline,
+    languageOutline,
+    locationOutline,
+    locationPin,
+    logoutOutline,
+    notificationOutline,
+    orders,
+    ordersActive,
+    person,
+    personActive,
+    phone,
+    privacyPolicyOutline,
+    profile,
+    roundMenu,
+    search,
+    securityOutline,
+    slidersSimple,
+    triangleShapes,
+    twitter,
+    userOutline,
+    visaLogo,
+    wallet,
+    walletActive,
+    walletOutline,
+    website,
+    whatsapp,
+  ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/account_setup_successful_logo_dark.png
+  AssetGenImage get accountSetupSuccessfulLogoDark => const AssetGenImage(
+    'assets/images/account_setup_successful_logo_dark.png',
+  );
+
+  /// File path: assets/images/account_setup_successful_logo_light.png
+  AssetGenImage get accountSetupSuccessfulLogoLight => const AssetGenImage(
+    'assets/images/account_setup_successful_logo_light.png',
+  );
+
+  /// File path: assets/images/create_new_password_logo_dark.png
+  AssetGenImage get createNewPasswordLogoDark =>
+      const AssetGenImage('assets/images/create_new_password_logo_dark.png');
+
+  /// File path: assets/images/create_new_password_logo_light.png
+  AssetGenImage get createNewPasswordLogoLight =>
+      const AssetGenImage('assets/images/create_new_password_logo_light.png');
+
+  /// File path: assets/images/forgot_password_logo_dark.png
+  AssetGenImage get forgotPasswordLogoDark =>
+      const AssetGenImage('assets/images/forgot_password_logo_dark.png');
+
+  /// File path: assets/images/forgot_password_logo_light.png
+  AssetGenImage get forgotPasswordLogoLight =>
+      const AssetGenImage('assets/images/forgot_password_logo_light.png');
+
+  /// File path: assets/images/home_slider_image.png
+  AssetGenImage get homeSliderImage =>
+      const AssetGenImage('assets/images/home_slider_image.png');
+
+  /// File path: assets/images/lets_you_in_dark.png
+  AssetGenImage get letsYouInDark =>
+      const AssetGenImage('assets/images/lets_you_in_dark.png');
+
+  /// File path: assets/images/lets_you_in_light.png
+  AssetGenImage get letsYouInLight =>
+      const AssetGenImage('assets/images/lets_you_in_light.png');
+
+  /// Directory path: assets/images/onboarding
+  $AssetsImagesOnboardingGen get onboarding =>
+      const $AssetsImagesOnboardingGen();
+
+  /// File path: assets/images/reset_password_successful_logo_dark.png
+  AssetGenImage get resetPasswordSuccessfulLogoDark => const AssetGenImage(
+    'assets/images/reset_password_successful_logo_dark.png',
+  );
+
+  /// File path: assets/images/reset_password_successful_logo_light.png
+  AssetGenImage get resetPasswordSuccessfulLogoLight => const AssetGenImage(
+    'assets/images/reset_password_successful_logo_light.png',
+  );
+
+  /// File path: assets/images/search_result_not_found_light.png
+  AssetGenImage get searchResultNotFoundLight =>
+      const AssetGenImage('assets/images/search_result_not_found_light.png');
+
+  /// File path: assets/images/search_result_not_found_logo_dark.png
+  AssetGenImage get searchResultNotFoundLogoDark => const AssetGenImage(
+    'assets/images/search_result_not_found_logo_dark.png',
+  );
+
+  /// Directory path: assets/images/splash
+  $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    accountSetupSuccessfulLogoDark,
+    accountSetupSuccessfulLogoLight,
+    createNewPasswordLogoDark,
+    createNewPasswordLogoLight,
+    forgotPasswordLogoDark,
+    forgotPasswordLogoLight,
+    homeSliderImage,
+    letsYouInDark,
+    letsYouInLight,
+    resetPasswordSuccessfulLogoDark,
+    resetPasswordSuccessfulLogoLight,
+    searchResultNotFoundLight,
+    searchResultNotFoundLogoDark,
+  ];
+}
+
+class $AssetsLottiesGen {
+  const $AssetsLottiesGen();
+
+  /// File path: assets/lotties/fingerprint.json
+  LottieGenImage get fingerprint =>
+      const LottieGenImage('assets/lotties/fingerprint.json');
+
+  /// File path: assets/lotties/no_internet.json
+  LottieGenImage get noInternet =>
+      const LottieGenImage('assets/lotties/no_internet.json');
+
+  /// File path: assets/lotties/success_fingerprint.json
+  LottieGenImage get successFingerprint =>
+      const LottieGenImage('assets/lotties/success_fingerprint.json');
+
+  /// File path: assets/lotties/wrong_fingerprint.json
+  LottieGenImage get wrongFingerprint =>
+      const LottieGenImage('assets/lotties/wrong_fingerprint.json');
+
+  /// List of all assets
+  List<LottieGenImage> get values => [
+    fingerprint,
+    noInternet,
+    successFingerprint,
+    wrongFingerprint,
+  ];
+}
+
+class $AssetsImagesOnboardingGen {
+  const $AssetsImagesOnboardingGen();
+
+  /// File path: assets/images/onboarding/onboarding_dark_1.png
+  AssetGenImage get onboardingDark1 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_dark_1.png');
+
+  /// File path: assets/images/onboarding/onboarding_dark_2.png
+  AssetGenImage get onboardingDark2 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_dark_2.png');
+
+  /// File path: assets/images/onboarding/onboarding_dark_3.png
+  AssetGenImage get onboardingDark3 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_dark_3.png');
+
+  /// File path: assets/images/onboarding/onboarding_light_1.png
+  AssetGenImage get onboardingLight1 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_light_1.png');
+
+  /// File path: assets/images/onboarding/onboarding_light_2.png
+  AssetGenImage get onboardingLight2 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_light_2.png');
+
+  /// File path: assets/images/onboarding/onboarding_light_3.png
+  AssetGenImage get onboardingLight3 =>
+      const AssetGenImage('assets/images/onboarding/onboarding_light_3.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    onboardingDark1,
+    onboardingDark2,
+    onboardingDark3,
+    onboardingLight1,
+    onboardingLight2,
+    onboardingLight3,
+  ];
+}
+
+class $AssetsImagesSplashGen {
+  const $AssetsImagesSplashGen();
+
+  /// File path: assets/images/splash/logo.png
+  AssetGenImage get logo =>
+      const AssetGenImage('assets/images/splash/logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [logo];
+}
+
+class Assets {
+  const Assets._();
+
+  static const String aEnv = '.env';
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
+
+  /// List of all assets
+  static List<String> get values => [aEnv];
+}
+
+class AssetGenImage {
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+    this.animation,
+  });
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+  final AssetGenImageAnimation? animation;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.medium,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class AssetGenImageAnimation {
+  const AssetGenImageAnimation({
+    required this.isAnimation,
+    required this.duration,
+    required this.frames,
+  });
+
+  final bool isAnimation;
+  final Duration duration;
+  final int frames;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = false;
+
+  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = true;
+
+  final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
+
+  _svg.SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    _svg.SvgTheme? theme,
+    _svg.ColorMapper? colorMapper,
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+        colorMapper: colorMapper,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      colorFilter:
+          colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class LottieGenImage {
+  const LottieGenImage(this._assetName, {this.flavors = const {}});
+
+  final String _assetName;
+  final Set<String> flavors;
+
+  _lottie.LottieBuilder lottie({
+    Animation<double>? controller,
+    bool? animate,
+    _lottie.FrameRate? frameRate,
+    bool? repeat,
+    bool? reverse,
+    _lottie.LottieDelegates? delegates,
+    _lottie.LottieOptions? options,
+    void Function(_lottie.LottieComposition)? onLoaded,
+    _lottie.LottieImageProviderFactory? imageProviderFactory,
+    Key? key,
+    AssetBundle? bundle,
+    Widget Function(BuildContext, Widget, _lottie.LottieComposition?)?
+    frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    double? width,
+    double? height,
+    BoxFit? fit,
+    AlignmentGeometry? alignment,
+    String? package,
+    bool? addRepaintBoundary,
+    FilterQuality? filterQuality,
+    void Function(String)? onWarning,
+    _lottie.LottieDecoder? decoder,
+    _lottie.RenderCache? renderCache,
+    bool? backgroundLoading,
+  }) {
+    return _lottie.Lottie.asset(
+      _assetName,
+      controller: controller,
+      animate: animate,
+      frameRate: frameRate,
+      repeat: repeat,
+      reverse: reverse,
+      delegates: delegates,
+      options: options,
+      onLoaded: onLoaded,
+      imageProviderFactory: imageProviderFactory,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      package: package,
+      addRepaintBoundary: addRepaintBoundary,
+      filterQuality: filterQuality,
+      onWarning: onWarning,
+      decoder: decoder,
+      renderCache: renderCache,
+      backgroundLoading: backgroundLoading,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}

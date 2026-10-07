@@ -1,0 +1,54 @@
+<resources>
+<color name="surface_dark">#191a1f</color>
+<color name="surface_light">#FFFFFF</color>
+
+<color name="on_surface_dark">#FFFFFF</color>
+<color name="on_surface_light">#212121</color>
+
+<color name="background_dark">#191a1f</color>
+<color name="background_light">#FFFFFF</color>
+
+<color name="on_background_dark">#FFFFFF</color>
+<color name="on_background_light">#212121</color>
+
+<color name="primary_light">#101010</color>
+<color name="primary_dark">#FFFFFF</color>
+
+<color name="on_primary_light">#FFFFFF</color>
+<color name="on_primary_dark">#101010</color>
+
+<color name="surface_container_light">#FAFAFA</color>
+<color name="surface_container_dark">#1F222B</color>
+
+<color name="outline">#3f99ff</color>
+<color name="outline_variant_light">#EFEFEF</color>
+<color name="outline_variant_dark">#2C2F37</color>
+
+<color name="on_surface_variant_light">#9E9E9E</color>
+<color name="on_surface_variant_dark">#E0E0E0</color>
+
+<color name="surface_container_high_light">#FCE8E9</color>
+<color name="surface_container_high_dark">#35383F</color>
+
+<color name="profile_image_background_light">#F5F5F7</color>
+<color name="profile_image_icon_light">#E9EAEF</color>
+<color name="profile_image_background_dark">#464648</color>
+<color name="profile_image_icon_dark">#36353A</color>
+
+
+
+
+
+
+
+<color name="secondary">#FFD700</color>
+<color name="on_secondary">#000000</color>
+<color name="tertiary">#00CED1</color>
+<color name="on_tertiary">#FFFFFF</color>
+<color name="error">#FF4444</color>
+<color name="error_container">#FF4444</color>
+<color name="scrim">#000000</color>
+<color name="on_error">#FFFFFF</color>
+<color name="shadow">#000000</color>
+
+</resources>
