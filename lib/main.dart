@@ -40,19 +40,27 @@ Future<void> main() async {
   // The public source tree intentionally ships with placeholders so it can be
   // built safely; add your own values to .env and firebase_options.dart.
   try {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   } catch (_) {
     // Firebase is optional for the local/demo build.
   }
   final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
   final supabaseKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
-  if (supabaseUrl.startsWith('https://') &&
+  final hasSupabaseConfig =
+      supabaseUrl.startsWith('https://') &&
       supabaseKey.isNotEmpty &&
-      !supabaseKey.startsWith('placeholder')) {
+      !supabaseKey.startsWith('placeholder');
+  try {
     await Supabase.initialize(
-      url: supabaseUrl,
-      publishableKey: supabaseKey,
-    );
+      // A local fallback keeps the UI usable when backend credentials have
+      // not been configured yet. Replace .env values for real data/auth.
+      url: hasSupabaseConfig ? supabaseUrl : 'https://placeholder.supabase.co',
+      publishableKey: hasSupabaseConfig ? supabaseKey : 'placeholder-anon-key',
+    ).timeout(const Duration(seconds: 3));
+  } catch (_) {
+    // The app can still open in offline/demo mode.
   }
 
   // initialize dependencies
@@ -70,7 +78,7 @@ Future<void> main() async {
 
   final appFlowCubit = getIt<AppFlowCubit>();
 
-  runApp( 
+  runApp(
     DevicePreview(
       enabled: !kReleaseMode && (kIsWeb || !Platform.isAndroid),
       builder: (context) => MultiBlocProvider(
@@ -84,7 +92,8 @@ Future<void> main() async {
     ),
   );
 
-  // FlutterNativeSplash.remove();
+  // Never leave the native splash visible if a backend is unavailable.
+  FlutterNativeSplash.remove();
 }
 
 class EviraApp extends StatelessWidget {
@@ -137,7 +146,7 @@ class EviraApp extends StatelessWidget {
                         supportedLocales: EviraLang.delegate.supportedLocales,
                         theme: lightTheme(),
                         darkTheme: darkTheme(),
-                        
+
                         themeMode: themeMode,
                         builder: (context, child) {
                           final isDark = context.isDark;

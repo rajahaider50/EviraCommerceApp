@@ -65,7 +65,6 @@ class _HelpCenterScreenState extends State<HelpCenterScreen>
                     case 0:
                       context.push(AppPaths.customerService);
                       break;
-                      
                   }
                 },
               ),

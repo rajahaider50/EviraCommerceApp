@@ -9,7 +9,6 @@ import 'package:flutter_multi_formatter/formatters/phone_input_formatter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class PhoneNumberTextFieldPart extends StatefulWidget {
   final TextEditingController controller;
   final Function(String phoneCode, String countryCode, String phoneNumber)
